@@ -1,0 +1,96 @@
+html {
+    @include gradientBackground;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.5;
+    //color: $dark-color;
+    // background-color: rgba($primary-color-variant, 0.1);
+    user-select: none;
+    // @include gradientBackground;
+
+}
+
+.container {
+    width: $container-lg;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+h2,
+
+h5 {
+    line-height: 1.2;
+    color: $text1;
+    // font-size: $fs-32;
+    text-transform: uppercase;
+    font-size: $fs-32;
+}
+
+h3 {
+    font-size: $fs-24;
+}
+
+h4 {
+    font-size: $fs-20;
+
+}
+
+i {
+    font-size: $fs-20;
+}
+
+
+
+section {
+    margin-top: 10rem;
+
+    &>h2 {
+        text-align: center;
+        margin: 5.5rem 0;
+        font-size: $fs-40;
+    }
+
+}
+
+.btn {
+    @include button();
+}
+
+.btn-primary {
+    @include button($white-color, $primary-color)
+}
+
+// ============================= MEDIA QUERIES (MEDIUM DEVICES) =========================
+@media screen and (max-width: 1024px) {
+
+    // @media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        width: $container-md;
+    }
+
+    section {
+        &>p {
+            width: 55%;
+        }
+
+
+    }
+}
+
+
+// ============================= MEDIA QUERIES (SALL DEVICES) =========================
+@media screen and (max-width: 600px) {
+    section {
+        &>p {
+            width: $container-md;
+        }
+    }
+}

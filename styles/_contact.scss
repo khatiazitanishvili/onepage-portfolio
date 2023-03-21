@@ -1,0 +1,76 @@
+/* CONTACT */
+
+#contact {
+
+    .container {
+        padding-top: 10rem;
+        display: grid;
+        grid-template-columns: 47% 47%;
+        gap: 6%;
+
+
+
+        .info {
+            // h2 {
+            //     font-size: $fs-40;
+            // }
+
+            p {
+                margin: 2rem 0 2rem;
+                font-size: $fs-18;
+            }
+
+
+        }
+    }
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+
+    .form__group {
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+            color: $text2;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            text-transform: uppercase;
+            @include borderContact;
+            background-color: transparent;
+            padding: 0.85rem 1rem;
+            display: block;
+            width: 100%;
+            resize: none;
+            appearance: none;
+            color: $text2;
+        }
+
+
+    }
+}
+
+/* ============================ MEDIA QUERIES (SMALL DEVICES) ========================== */
+@media screen and (max-width: 600px) {
+    #contact {
+        .container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+
+            .info {
+
+                h2,
+                p {
+                    text-align: start;
+                }
+            }
+        }
+    }
+}

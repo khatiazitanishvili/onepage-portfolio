@@ -1,0 +1,137 @@
+#project {
+    @include borderLine;
+
+    .container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        article {
+            background-color: transparent;
+            border-radius: 1rem;
+            // box-shadow: 0 1.5rem 1.5rem rgba($black-color, 0.1);
+            position: relative;
+            transition: all 700ms ease;
+
+            &:hover {
+                box-shadow: none;
+
+
+                .project__image::before {
+                    left: 0;
+                    border-radius: 1rem;
+                }
+
+                .project__view {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .project__image {
+                height: 100%;
+                position: relative;
+                border-radius: 1rem;
+                overflow: hidden;
+                // width: 100%;
+                height: auto;
+
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    background: linear-gradient(135deg, rgba($primary-color, 0.8), rgba($primary-color-variant, 0.8));
+                    border-radius: 50%;
+                    transition: all 1s ease;
+                }
+            }
+
+
+            .project__details {
+                margin: 1.5rem 0;
+                text-align: start;
+                text-transform: uppercase;
+
+
+                h4 {
+                    line-height: 1.3;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 1rem;
+                    word-spacing: 1rem;
+
+                }
+
+
+            }
+
+
+            .project__view {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 50%;
+                padding: 0.2rem;
+                display: flex;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 1s 400ms ease;
+
+
+                a {
+                    font-size: $fs-20;
+                    color: $text1;
+                    text-transform: uppercase;
+
+
+
+
+                    &:hover {
+                        color: $accent;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// ================================ MEDIA QUERIES(MEDIUM DEVICES) ========================
+@media screen and (max-width: 1024px) {
+    #project {
+        .container {
+            grid-template-columns: 1fr 1fr;
+
+
+        }
+    }
+}
+
+
+
+// ================================ MEDIA QUERIES(SMALL DEVICES) ========================
+@media screen and (max-width: 600px) {
+    #project {
+        .container {
+            grid-template-columns: 1fr;
+
+        }
+    }
+}
